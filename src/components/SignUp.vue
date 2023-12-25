@@ -36,15 +36,15 @@
       <button type="submit" class="btn btn-primary">Sign Up</button>
     </form>
   </div>
-
-  
 </template>
 
 
 
 <script>
+import Swal from 'sweetalert2'
 export default {
   name:"SignUp",
+  name:'SweetAlert2Demo',
   data() {
     return {
       email: '',
@@ -88,6 +88,9 @@ export default {
       console.error('Error sending form data:', error);
      
     });
+    Swal.fire({ title: "Sign Up Successful!",
+  
+  icon: "success"});
       event.target.reset();
       console.log('Form submitted with data:', this.email, this.firstName, this.lastName, this.mobileNumber, this.password);
     }
